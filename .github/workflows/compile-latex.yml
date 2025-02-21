@@ -1,4 +1,4 @@
-name: Compile LaTeX and Release Resume
+name: Build and Release Resume
 
 on:
   push:
@@ -6,8 +6,10 @@ on:
   workflow_dispatch:
 
 jobs:
-  build:
+  build-release:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
@@ -30,6 +32,14 @@ jobs:
       - name: Create GitHub Release with resume.pdf
         uses: ncipollo/release-action@v1
         with:
-          tag: v1.0.0
-          name: Resume v1.0.0
-          files: resume.pdf
+          tag: v1.0.${{ github.run_number }}
+          name: Resume Release v1.0.${{ github.run_number }}
+          artifacts: resume.pdf
+          commit: main
+          draft: false
+          prerelease: false
+          allowUpdates: true
+          body: "Compiled resume from main.tex."
+          generateReleaseNotes: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

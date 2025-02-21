@@ -35,7 +35,6 @@ jobs:
           tag: v1.0.${{ github.run_number }}
           name: Resume Release v1.0.${{ github.run_number }}
           artifacts: resume.pdf
-          commit: main
           draft: false
           prerelease: false
           allowUpdates: true

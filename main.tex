@@ -1,0 +1,268 @@
+\documentclass[10pt,a4paper]{article}
+
+% Packages:
+\usepackage[
+    ignoreheadfoot,
+    top=1cm,
+    bottom=1cm,
+    left=1.5cm,
+    right=1.5cm,
+    footskip=1.0cm,
+]{geometry}
+\usepackage{titlesec}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage[dvipsnames]{xcolor}
+\definecolor{primaryColor}{RGB}{0,0,0}
+\usepackage{enumitem}
+\usepackage{fontawesome5}
+\usepackage{amsmath}
+\usepackage[
+    pdftitle={Jefino's CV},
+    pdfauthor={Jefino9488},
+    pdfcreator={LaTeX with RenderCV},
+    colorlinks=true,
+    urlcolor=primaryColor
+]{hyperref}
+\usepackage[pscoord]{eso-pic}
+\usepackage{calc}
+\usepackage{bookmark}
+\usepackage{lastpage}
+\usepackage{changepage}
+\usepackage{paracol}
+\usepackage{ifthen}
+\usepackage{needspace}
+\usepackage{iftex}
+
+% Ensure that generate pdf is machine readable/ATS parsable:
+\ifPDFTeX
+\pdfgentounicode=1
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\fi
+\usepackage{charter}
+
+% Some settings:
+\raggedright
+\pagestyle{empty}
+\setcounter{secnumdepth}{0}
+\setlength{\parindent}{0pt}
+\setlength{\topskip}{0pt}
+\setlength{\columnsep}{0.15cm}
+\pagenumbering{gobble}
+
+\titleformat{\section}{\needspace{3\baselineskip}\bfseries\large}{}{0pt}{}[\vspace{1pt}\titlerule]
+
+\titlespacing{\section}{
+    -1pt
+}{
+    0.2cm
+}{
+    0.2cm
+}
+
+\newenvironment{highlights}{
+    \begin{itemize}[
+        topsep=0.10cm,
+        parsep=0.10cm,
+        partopsep=0pt,
+        itemsep=0pt,
+        leftmargin=0cm+10pt
+    ]
+    }{
+    \end{itemize}
+}
+
+\newenvironment{highlightsforbulletentries}{
+    \begin{itemize}[
+        topsep=0.10cm,
+        parsep=0.10cm,
+        partopsep=0pt,
+        itemsep=0pt,
+        leftmargin=10pt
+    ]
+    }{
+    \end{itemize}
+}
+
+\newenvironment{onecolentry}{
+    \begin{adjustwidth}{
+        0cm+0.00001cm
+    }{
+        0cm+0.00001cm
+    }
+    }{
+    \end{adjustwidth}
+}
+
+\newenvironment{twocolentry}[2][]{
+    \onecolentry
+    \def\secondColumn{#2}
+    \setcolumnwidth{\fill,\fill}
+    \begin{paracol}{2}
+    }{
+        \switchcolumn\raggedleft\secondColumn
+    \end{paracol}
+    \endonecolentry
+}
+
+\newenvironment{threecolentry}[3][]{
+    \onecolentry
+    \def\thirdColumn{#3}
+    \setcolumnwidth{,\fill,4.5cm}
+    \begin{paracol}{3}
+    {\raggedright#2}\switchcolumn
+    }{
+    \switchcolumn\raggedleft\thirdColumn
+    \end{paracol}
+    \endonecolentry
+}
+
+\newenvironment{fourcolentry}{
+    \onecolentry
+    \setcolumnwidth{\fill,\fill,\fill,\fill}
+    \begin{paracol}{4}
+    }{
+    \end{paracol}
+    \endonecolentry
+}
+
+\newenvironment{header}{
+    \setlength{\topsep}{0pt}\par\kern\topsep\centering\linespread{1.5}
+    }{
+    \par\kern\topsep
+}
+
+\newcommand{\placelastupdatedtext}{%
+    \AddToShipoutPictureFG*{%
+        \put(
+        \LenToUnit{\paperwidth-1.5cm}, %
+        \LenToUnit{1cm}
+        ){\vtop{{\null}\makebox[0pt][r]{%
+            \small\color{gray}\textit{Last updated in February 2025}%
+        }}}%
+    }%
+}
+
+% save the original href command in a new command:
+\let\hrefWithoutArrow\href
+\newcommand{\AND}{\unskip
+\cleaders\copy\ANDbox\hskip\wd\ANDbox
+\ignorespaces
+}
+\newsavebox\ANDbox
+\sbox\ANDbox{$|$}
+
+%///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+\begin{document}
+\begin{header}
+    \fontsize{25pt}{25pt}\selectfont Jefino M Jacob
+
+    \vspace{3pt}
+
+    \normalsize
+    \mbox{\hrefWithoutArrow{mailto:jefinojacob9488@gmail.com}{\faIcon{envelope} jefinojacob9488@gmail.com}}%
+    \kern5.0pt%
+    \AND%
+    \kern5.0pt%
+    \mbox{\hrefWithoutArrow{https://jefino.is-a.dev/}{\faIcon{globe} jefino.is-a.dev}}%
+    \kern5.0pt%
+    \AND%
+    \kern5.0pt%
+    \mbox{\hrefWithoutArrow{https://www.linkedin.com/in/jefino9488}{\faIcon{linkedin} linkedin.com/in/jefino9488}}%
+    \kern5.0pt%
+    \AND%
+    \kern5.0pt%
+    \mbox{\hrefWithoutArrow{https://github.com/Jefino9488}{\faIcon{github} github.com/Jefino9488}}%
+\end{header}
+
+\vspace{0.2cm}
+
+\section{Education}\label{sec:education}
+
+\begin{onecolentry}
+    \textbf{Bachelor of Technology in Artificial Intelligence and Data Science}
+    \hfill \textbf{CGPA: X.XX} \\
+    Chennai Institute of Technology, Chennai, Tamil Nadu \hfill \textbf{(Year)}
+\end{onecolentry}
+
+\section{Work Experience}\label{sec:work-experience}
+
+\begin{onecolentry}
+    \textbf{Python Development} Intern | CodersCave \hfill \textbf{ Nov 2023 - Dec 2023 } \\
+    Interned at CodersCave, actively contributed to Python projects, delivering Sound Recorder,Calculator, Typing Speed,
+    and Password generator.
+\end{onecolentry}
+\vspace{0.1cm}
+\begin{onecolentry}
+    \textbf{Web Development} Intern | Cognifyz Technologies \hfill \textbf{ May 2024 - Jul 2024 } \\
+    Interned at Cognifyz Technologies, contributing to web development and creating responsive,user-friendly interfaces and
+    Gained experience in modern technologies and collaborative development.
+\end{onecolentry}
+
+\section{Projects}\label{sec:projects}
+
+\begin{onecolentry}
+    \textbf{Ai-Chatbot} AI powered ChatBot using Gemini , Monster api \hfill \textbf{( Jun 01, 2024 )} \\
+    AI chatbot that can converse with users, generate and explain images based on prompts, and extract text from PDF files
+    to use as context for chat interactions.
+    It uses the Gemini models for generating responses and the Monster API for
+    image generation with high accuracy and efficiency
+\end{onecolentry}
+\vspace{0.1cm}
+\begin{onecolentry}
+    \textbf{Framework Patcher} Automated workflow to patch miui frameworks \hfill \textbf{( Jun 20, 2024 )} \\
+    Developed a Python-based Framework Patcher to modify Android frameworks using Baksmali and Smali for decompiling, editing,
+    and recompiling with improved automation, and effectiveness.
+\end{onecolentry}
+\vspace{0.1cm}
+\begin{onecolentry}
+    \textbf{Chat Room} End - End Secure Chat Room \hfill \textbf{( Aug 09, 2024 )} \\
+    Developed a real-time chatroom application leveraging Firebase Realtime Database for efficient data handling and Google
+    Sign-In for seamless user authentication.
+    Integrated end-to-end encryption to ensure secure and private communication between
+    users maintaining their privacy.
+\end{onecolentry}
+
+\section{Certifications}\label{sec:certifications}
+\begin{twocolentry}{
+    \begin{highlights}
+        \item UiPath Automation Explorer for Students
+        \item Python for Data Science and Machine Learning
+    \end{highlights}
+}{
+    \begin{highlights}
+        \item DeepLearning.AI TensorFlow Developer
+        \item NPTEL Cloud Certification
+    \end{highlights}
+}
+\end{twocolentry}
+
+\section{Skills}\label{sec:skills}
+
+\begin{fourcolentry}
+    \begin{highlights}
+        \item Python
+        \item HTML/CSS/JS
+    \end{highlights}
+    \switchcolumn
+    \begin{highlights}
+        \item React
+        \item Flask
+    \end{highlights}
+    \switchcolumn
+    \begin{highlights}
+        \item Google Cloud
+        \item Firebase
+    \end{highlights}
+    \switchcolumn
+    \begin{highlights}
+        \item Shell Script
+        \item Github
+    \end{highlights}
+\end{fourcolentry}
+
+\placelastupdatedtext
+
+\end{document}

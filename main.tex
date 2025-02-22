@@ -5,8 +5,8 @@
     ignoreheadfoot,
     top=1cm,
     bottom=1cm,
-    left=1.5cm,
-    right=1.5cm,
+    left=1cm,
+    right=1cm,
     footskip=1.0cm,
 ]{geometry}
 \usepackage{titlesec}
@@ -76,11 +76,11 @@
 
 \newenvironment{highlightsforbulletentries}{
     \begin{itemize}[
-        topsep=0.10cm,
-        parsep=0.10cm,
+        topsep=0.5cm,
+        parsep=0.5cm,
         partopsep=0pt,
         itemsep=0pt,
-        leftmargin=10pt
+        leftmargin=8pt
     ]
     }{
     \end{itemize}
@@ -98,7 +98,7 @@
 
 \newenvironment{twocolentry}[2][]{
     \onecolentry
-    \def\secondColumn{#2}
+    \newcommand\secondColumn{#2}
     \setcolumnwidth{\fill,\fill}
     \begin{paracol}{2}
     }{
@@ -109,7 +109,7 @@
 
 \newenvironment{threecolentry}[3][]{
     \onecolentry
-    \def\thirdColumn{#3}
+    \newcommand\thirdColumn{#3}
     \setcolumnwidth{,\fill,4.5cm}
     \begin{paracol}{3}
     {\raggedright#2}\switchcolumn
@@ -146,127 +146,149 @@
 }
 
 % save the original href command in a new command:
-\let\hrefWithoutArrow\href
-\newcommand{\AND}{\unskip
-\cleaders\copy\ANDbox\hskip\wd\ANDbox
-\ignorespaces
-}
+\newcommand\hrefWithoutArrow\href
+\newcommand{\AND}{\unskip\kern5.0pt|\kern5.0pt\ignorespaces}
 \newsavebox\ANDbox
 \sbox\ANDbox{$|$}
 
 %///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 \begin{document}
-\begin{header}
-    \fontsize{25pt}{25pt}\selectfont Jefino M Jacob
+    \begin{header}
+        \fontsize{25pt}{25pt}\selectfont Jefino M Jacob
 
-    \vspace{3pt}
+        \vspace{3pt}
 
-    \normalsize
-    \mbox{\hrefWithoutArrow{mailto:jefinojacob9488@gmail.com}{\faIcon{envelope} jefinojacob9488@gmail.com}}%
-    \kern5.0pt%
-    \AND%
-    \kern5.0pt%
-    \mbox{\hrefWithoutArrow{https://jefino.is-a.dev/}{\faIcon{globe} jefino.is-a.dev}}%
-    \kern5.0pt%
-    \AND%
-    \kern5.0pt%
-    \mbox{\hrefWithoutArrow{https://www.linkedin.com/in/jefino9488}{\faIcon{linkedin} linkedin.com/in/jefino9488}}%
-    \kern5.0pt%
-    \AND%
-    \kern5.0pt%
-    \mbox{\hrefWithoutArrow{https://github.com/Jefino9488}{\faIcon{github} github.com/Jefino9488}}%
-\end{header}
+        \normalsize
+        \mbox{\hrefWithoutArrow{mailto:jefinojacob9488@gmail.com}{\faIcon{envelope} jefinojacob9488@gmail.com}}%
+        \kern5.0pt%
+        \AND%
+        \kern5.0pt%
+        \mbox{\hrefWithoutArrow{https://jefino.is-a.dev/}{\faIcon{globe} jefino.is-a.dev}}%
+        \kern5.0pt%
+        \AND%
+        \kern5.0pt%
+        \mbox{\hrefWithoutArrow{https://www.linkedin.com/in/jefino9488}{\faIcon{linkedin} linkedin.com/in/jefino9488}}%
+        \kern5.0pt%
+        \AND%
+        \kern5.0pt%
+        \mbox{\hrefWithoutArrow{https://github.com/Jefino9488}{\faIcon{github} github.com/Jefino9488}}%
+    \end{header}
 
-\vspace{0.2cm}
+    \vspace{0.2cm}
 
-\section{Education}\label{sec:education}
+    \section{Education}\label{sec:education}
 
-\begin{onecolentry}
-    \textbf{Bachelor of Technology in Artificial Intelligence and Data Science}
-    \hfill \textbf{CGPA: X.XX} \\
-    Chennai Institute of Technology, Chennai, Tamil Nadu \hfill \textbf{(Year)}
-\end{onecolentry}
+    \begin{onecolentry}
+        \textbf{Chennai Institute of Technology, Chennai, Tamil Nadu} \hfill \textbf{CGPA: 7.81} \\
+        Bachelor of Technology in Artificial Intelligence and Data Science \hfill \textbf{2022 - 2026}
+    \end{onecolentry}
 
-\section{Work Experience}\label{sec:work-experience}
+    \section{Work Experience}\label{sec:work-experience}
 
-\begin{onecolentry}
-    \textbf{Python Development} Intern | CodersCave \hfill \textbf{ Nov 2023 - Dec 2023 } \\
-    Interned at CodersCave, actively contributed to Python projects, delivering Sound Recorder,Calculator, Typing Speed,
-    and Password generator.
-\end{onecolentry}
-\vspace{0.1cm}
-\begin{onecolentry}
-    \textbf{Web Development} Intern | Cognifyz Technologies \hfill \textbf{ May 2024 - Jul 2024 } \\
-    Interned at Cognifyz Technologies, contributing to web development and creating responsive,user-friendly interfaces and
-    Gained experience in modern technologies and collaborative development.
-\end{onecolentry}
+    \textbf{Web Development Intern} | Cognifyz Technologies \hfill \textbf{May 2024 -- Jul 2024} \\
+    \begin{onecolentry}
+        \begin{highlights}
+            \vspace{0.01cm}
+            \item Partnered with a team of 6 developers at Cognifyz Technologies, incorporating 3 RESTful APIs into web applications.
+            \item Applied modern web technologies including HTML5, CSS3, React, linking RESTful APIs supporting 50+ multiple users
+        \end{highlights}
+    \end{onecolentry}
+    \vspace{0.01cm}
+    \textbf{Python Development Intern} | CodersCave \hfill \textbf{Nov 2023 -- Dec 2023} \\
+    \begin{onecolentry}
+        \begin{highlights}
+            \vspace{0.01cm}
+            \item Contributed to 5 Python projects at CodersCave, an AICTE-approved organization, delivering over 1,200 lines of code.
+            \item Engineered suite of 4 applications Sound Recorder, Calculator, Typing Speed Test, Password Generator with test coverage
+            \item Streamlined debugging by 30\% leveraging agile methods and Git for version control, boosting project delivery efficiency. \\
+        \end{highlights}
+    \end{onecolentry}
 
-\section{Projects}\label{sec:projects}
+    \section{Projects}\label{sec:projects}
 
-\begin{onecolentry}
-    \textbf{College Management System} Secure and Efficient Academic Administration \hfill \textbf{( Feb 02, 2025 )} \\
-    Developed a secure College Management System with JWT authentication and role-based access.
-    Built RESTful APIs for attendance, exams, certificates, and profiles.
-    Integrated Apache POI for bulk student registration via Excel.
-    Implemented real-time attendance tracking and dynamic exam scheduling.
-    Used PostgreSQL, Spring Security, and Thymeleaf for secure and efficient management.
-\end{onecolentry}
-\vspace{0.1cm}
-\begin{onecolentry}
-    \textbf{Framework Patcher} Open-Source Framework Patching Tool \hfill \textbf{(June 20, 2024)} \\
-    Developed an automated tool for modifying MIUI/HyperOS framework files on Xiaomi devices.
-    Implemented Python and Shell scripts for decompilation, patching, and recompilation using \texttt{baksmali}, \texttt{smali}, and \texttt{zipalign}.
-    Integrated core patches for signature verification bypass, notification fixes, and \texttt{FLAG\_SECURE} removal.
-    Built a Magisk module for seamless installation and automated the workflow using GitHub Actions.
-    Designed a React.js and Tailwind CSS-based web interface for user-friendly customization.
-\end{onecolentry}
-\vspace{0.1cm}
-\begin{onecolentry}
-    \textbf{Chat Room} End - End Secure Chat Room \hfill \textbf{( Aug 09, 2024 )} \\
-    Developed a real-time chatroom application leveraging Firebase Realtime Database for efficient data handling and Google
-    Sign-In for seamless user authentication.
-    Integrated end-to-end encryption to ensure secure and private communication between
-    users maintaining their privacy.
-\end{onecolentry}
+    \begin{onecolentry}
+        \textbf{College Management System} Efficient Academic Management | Spring boot, React, PostgreSQL \hfill \textbf{( Feb 02, 2025 )} \\
+        \begin{highlights}
+            \item Built College Management with JWT authentication  managing 500+ users across 3 roles (admins, faculty, students). \\
+            \item Crafted 12 RESTful APIs with Spring Boot for handling 1,000+ daily requests for attendance and exam scheduling. \\
+            \item Incorporated Apache POI library for streamlined bulk student registration via Excel sheets, cutting 40\% Admin work. \\
+            \item Implemented attendance tracking via WebSockets and exam scheduling, optimizing resources for 200+ exams. \\
+            \item Leveraged PostgreSQL for robust data storage, Spring Security for authentication, Thymeleaf for server-side rendering. \\
+            \item Created a modern, responsive web interface with Vite, React, and Shadcn UI Components for superior User Experience. \\
+        \end{highlights}
+    \end{onecolentry}
+    \vspace{0.01cm}
+    \begin{onecolentry}
+        \textbf{Code Community} End - End Secure Chat Room | React, Tailwind CSS, Firebase \hfill \textbf{( Aug 09, 2024 )} \\
+        \begin{highlights}
+            \item Launched a chat app supporting 100+ concurrent users, with AES-GCM encryption securing 1,000+ daily messages. \\
+            \item Applied AES-GCM encryption for message security and Google Authentication for secure onboarding 150+ users. \\
+            \item Attained 99.9\% deployment success rate via GitHub Actions, managing 50+ builds and tests automatically.
+        \end{highlights}
+    \end{onecolentry}
+    \vspace{0.01cm}
+    \begin{onecolentry}
+        \textbf{Framework Patcher} Open-Source Framework Patching Tool | Python, Batch Script, Smali \hfill \textbf{( June 20, 2024 )} \\
+        \begin{highlights}
+            \item Engineered tool for modifying MIUI/HyperOS framework of 1000+ Xiaomi devices,enabling customization for users. \\
+            \item Executed Python3 and Shell scripts for decompilation, patching, and recompilation using \texttt{baksmali}, \texttt{smali}, \texttt{zipalign}.\\
+            \item Embedded patches to bypass signature verification, fix notification issues, \texttt{FLAG\_SECURE}, enhancing functionality by 30\%. \\
+            \item Assembled Magisk module for seamless installation on 500+ rooted devices, automated workflow using GitHub Actions \\
+            \item Produced web interface to offer access and usage instructions, elevating accessibility for the open-source community.
+        \end{highlights}
+    \end{onecolentry}
 
-\section{Certifications}\label{sec:certifications}
-\begin{twocolentry}{
+    \section{Certifications}\label{sec:certifications}
+
+    \begin{twocolentry}{
+        \begin{highlights}
+            \item UiPath Automation Explorer for Students \hfill (  UiPath  )
+            \item Cloud Computing \hfill (  NPTEL, Ministry of Education  )
+            \item Microsoft Azure Cloud  Computing \hfill (  Microsoft  )
+        \end{highlights}
+    }{
+        \begin{highlights}
+            \item Python for Data Science and Machine Learning \hfill (  Udemy  )
+            \item DeepLearning.AI TensorFlow Developer \hfill (  Coursera  )
+            \item Machine Learning with Python \hfill (  Coursera  )
+        \end{highlights}
+    }
+    \end{twocolentry}
+
+    \section{Skills}\label{sec:skills}
+
+    \begin{twocolentry}{
+        \begin{highlights}
+            \item \textbf{Databases:} MySQL, PostgreSQL
+            \item \textbf{Cloud:} Google Cloud, Firebase, AWS [EC2]
+            \item \textbf{Tools:} GitHub, GitHub Actions, RESTful APIs, JWT
+        \end{highlights}
+    }{
+        \begin{highlights}
+            \item \textbf{Languages:} Python, JavaScript, Shell Scripts
+            \item \textbf{Web:} HTML, CSS, React, Vite, Tailwind CSS
+            \item \textbf{Frameworks:} Flask, Spring Security, Apache POI
+        \end{highlights}
+    }
+    \end{twocolentry}
+
+    \section{Achievements}\label{sec:achievements}
+
     \begin{highlights}
-        \item UiPath Automation Explorer for Students
-        \item Python for Data Science and Machine Learning
+        \item Managing 46 GitHub repositories, earning 106+ stars and 60,000+ views, with 1,500+ releases and downloads.
+        \item Maintaining an open-source framework patcher with 50,000+ views and 67 stars, enabling deep system modifications.
     \end{highlights}
-}{
-    \begin{highlights}
-        \item DeepLearning.AI TensorFlow Developer
-        \item NPTEL Cloud Certification
-    \end{highlights}
-}
-\end{twocolentry}
 
-\section{Skills}\label{sec:skills}
+    \section{Coding Profile}\label{sec:coding-profile}
 
-\begin{fourcolentry}
-    \begin{highlights}
-        \item Python
-        \item HTML/CSS/JS
-    \end{highlights}
-    \switchcolumn
-    \begin{highlights}
-        \item React
-        \item Flask
-    \end{highlights}
-    \switchcolumn
-    \begin{highlights}
-        \item Google Cloud
-        \item Firebase
-    \end{highlights}
-    \switchcolumn
-    \begin{highlights}
-        \item Shell Script
-        \item Github
-    \end{highlights}
-\end{fourcolentry}
+    \begin{onecolentry}
+        \begin{highlights}
+            \item \textbf{LeetCode [jefinojacob9488] \ \ :} Tackled 520+ challenges, achieved 1500 rating, ranked top 25\% worldwide.
+            \item \textbf{CodeChef [jefino9488] \ \ \ \ \ \ \ \ \ \ :} Earned 2 stars, hit peak rating of 1450.
+            \item \textbf{Codeforces [jefino9488]\ \ \ \ \ \ \ \ \ :} Conquered 100+ tasks, secured 1120 rating, steady competitor.
+        \end{highlights}
+    \end{onecolentry}
 
-\placelastupdatedtext
+    \placelastupdatedtext
 
 \end{document}

@@ -1,0 +1,10 @@
+/.idea/.gitignore
+/out/main.aux
+/out/main.log
+/out/main.out
+/out/main.pdf
+/out/main.synctex.gz
+/.idea/misc.xml
+/.idea/modules.xml
+/resume.iml
+/.idea/vcs.xml

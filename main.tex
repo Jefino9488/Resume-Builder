@@ -68,7 +68,7 @@
         parsep=0.10cm,
         partopsep=0pt,
         itemsep=0pt,
-        leftmargin=0cm+10pt
+        leftmargin=10pt,
     ]
     }{
     \end{itemize}
@@ -179,61 +179,80 @@
 
     \begin{onecolentry}
         \textbf{Chennai Institute of Technology, Chennai, Tamil Nadu} \hfill \textbf{CGPA: 7.81} \\
-        Bachelor of Technology in Artificial Intelligence and Data Science \hfill \textbf{2022 - 2026}
+        Bachelor of Technology in Artificial Intelligence and Data Science \hfill \textbf{2022 -- 2026}
     \end{onecolentry}
 
-    \section{Work Experience}\label{sec:work-experience}
+    \section{Skills}\label{sec:skills}
 
-    \textbf{Web Development Intern} | Cognifyz Technologies \hfill \textbf{May 2024 -- Jul 2024} \\
+    \begin{twocolentry}{
+        \begin{highlights}
+            \item \textbf{Cloud \& DevOps:} GCP, Firebase, AWS [EC2,s3], Docker
+            \item \textbf{Tools:} GitHub, GitHub Actions, RESTful APIs, JWT, Vite
+            \item \textbf{Databases:} MySQL, PostgreSQL
+        \end{highlights}
+    }{
+        \begin{highlights}
+            \item \textbf{Languages:} Python, JavaScript, Shell Scripts, SQL
+            \item \textbf{Web Development:} HTML5, CSS3, React, Tailwind CSS
+            \item \textbf{Frameworks:} Flask, Spring Boot, TensorFlow, PyTorch
+        \end{highlights}
+    }
+    \end{twocolentry}
+
+    \section{Experience}\label{sec:experience}
+
+    \textbf{Web Development Intern} | Cognifyz Technologies \hfill \textbf{May 2024 -- July 2024} \\
     \begin{onecolentry}
         \begin{highlights}
             \vspace{0.01cm}
-            \item Partnered with a team of 6 developers at Cognifyz Technologies, incorporating 3 RESTful APIs into web applications.
+            \item Collaborated with a team of 6 developers at Cognifyz Technologies, incorporating 3 RESTful APIs into web applications.
             \item Applied modern web technologies including HTML5, CSS3, React, linking RESTful APIs supporting 50+ multiple users
+            \item Optimized to enhance application performance and frontend components for faster load times.
         \end{highlights}
     \end{onecolentry}
-    \vspace{0.01cm}
-    \textbf{Python Development Intern} | CodersCave \hfill \textbf{Nov 2023 -- Dec 2023} \\
+    \vspace{0.1cm}
+    \textbf{Python Development Intern} | CodersCave \hfill \textbf{November 2023 -- December 2023} \\
     \begin{onecolentry}
         \begin{highlights}
             \vspace{0.01cm}
             \item Contributed to 5 Python projects at CodersCave, an AICTE-approved organization, delivering over 1,200 lines of code.
-            \item Engineered suite of 4 applications Sound Recorder, Calculator, Typing Speed Test, Password Generator with test coverage
+            \item Developed suite of 4 applications Sound Recorder, Calculator, Typing Speed Test, Password Generator with test coverage
             \item Streamlined debugging by 30\% leveraging agile methods and Git for version control, boosting project delivery efficiency. \\
         \end{highlights}
     \end{onecolentry}
 
-    \section{\href{https://jefino.is-a.dev/projects}{Projects}}\label{sec:projects}
+    \section{Projects}\label{sec:projects}
 
     \begin{onecolentry}
-        \textbf{\href{https://github.com/Jefino9488/College-Management-Server}{College Management System}} Efficient Academic Management | Spring boot, React, Postgres SQL \hfill \textbf{( Feb 02, 2025 )} \\
+        \textbf{\href{https://github.com/Jefino9488/College-Management-Server}{College Management System}} Efficient Academic Management | Spring boot, React, Postgres SQL \hfill \textbf{( February 2025 )} \\
         \begin{highlights}
-            \item Built College Management with JWT authentication  managing 500+ users across 3 roles (admins, faculty, students). \\
-            \item Crafted 12 RESTful APIs with Spring Boot for handling 1,000+ daily requests for attendance and exam scheduling. \\
-            \item Incorporated Apache POI library for streamlined bulk student registration via Excel sheets, cutting 40\% Admin work. \\
+            \item Built College Management with JWT authentication managing 500+ users across 3 roles (admins, faculty, students). \\
+            \item Designed 12 RESTful APIs with Spring Boot for handling 1,000+ daily requests for attendance and exam scheduling. \\
+            \item Incorporated Apache POI library for developed bulk student registration via Excel sheets, cutting 40\% Admin work. \\
             \item Implemented attendance tracking via WebSockets and exam scheduling, optimizing resources for 200+ exams. \\
-            \item Leveraged Postgres SQL for robust data storage, Spring Security for authentication, Thymeleaf for server-side rendering. \\
-            \item Created a modern, responsive web interface with Vite, React, and Shadcn UI Components for superior User Experience. \\
+%            \item Created a modern, responsive web interface with Vite, React, and Shadcn UI Components for superior User Experience. \\
         \end{highlights}
     \end{onecolentry}
     \vspace{0.01cm}
     \begin{onecolentry}
-        \textbf{\href{https://github.com/Jefino9488/Code_Community}{Code Community}} End - End Secure Chat Room | React, Tailwind CSS, Firebase \hfill \textbf{( Aug 09, 2024 )} \\
+        \textbf{\href{https://github.com/Jefino9488/Code_Community}{Code Community}} End-to-End Secure Chat Room | React, Tailwind CSS, Firebase, CI/CD pipelines \hfill \textbf{( August 2024 )} \\
         \begin{highlights}
             \item Launched a chat app supporting 100+ concurrent users, with AES-GCM encryption securing 1,000+ daily messages. \\
-            \item Applied AES-GCM encryption for message security and Google Authentication for secure onboarding 150+ users. \\
-            \item Attained 99.9\% deployment success rate via GitHub Actions, managing 50+ builds and tests automatically.
+            \item Applied AES-GCM encryption for message security and Google Authentication for secure onboarding of 150+ users. \\
+            \item Attained a 99.9\% deployment success rate via \textit{CI/CD with GitHub Actions}, managing 50+ builds and tests automatically. \\
+            \item Optimized Firebase Firestore queries, reducing data retrieval latency by 30\% for a smoother chat experience. \\
+%            \item Implemented password-protected chat rooms, enhancing privacy and control over conversations. \\
         \end{highlights}
     \end{onecolentry}
     \vspace{0.01cm}
     \begin{onecolentry}
-        \textbf{\href{https://github.com/Jefino9488/FrameworkPatcher}{Framework Patcher}} Open-Source Framework Patching Tool | Python, Batch Script, Smali \hfill \textbf{( June 20, 2024 )} \\
+        \textbf{\href{https://github.com/Jefino9488/FrameworkPatcher}{Framework Patcher}} Open-Source Patching Tool | Python, Batch Script, Smali, Reverse Engineering \hfill \textbf{( June 2024 )} \\
         \begin{highlights}
-            \item Engineered tool for modifying MIUI/HyperOS framework of 1000+ Xiaomi devices,enabling customization for users. \\
+            \item Automated tool for modifying MIUI/HyperOS framework of 1000+ Xiaomi devices,enabling customization for users. \\
             \item Executed Python3 and Shell scripts for decompilation, patching, and recompilation using \texttt{baksmali}, \texttt{smali}, \texttt{zipalign}.\\
-            \item Embedded patches to bypass signature verification, fix notification issues, \texttt{FLAG\_SECURE}, enhancing functionality by 30\%. \\
+            \item Embedded patches to bypass signature verification, fix notification issues, \texttt{FLAG\_SECURE}, reduced runtime by 30\%. \\
             \item Assembled Magisk module for seamless installation on 500+ rooted devices, automated workflow using GitHub Actions \\
-            \item Produced web interface to offer access and usage instructions, elevating accessibility for the open-source community.
+%            \item Produced web interface to offer access and usage instructions, elevating accessibility for the open-source community.
         \end{highlights}
     \end{onecolentry}
 
@@ -241,32 +260,15 @@
 
     \begin{twocolentry}{
         \begin{highlights}
-            \item UiPath Automation Explorer for Students \hfill (  UiPath  )
-            \item Cloud Computing \hfill (  NPTEL, Ministry of Education  )
-            \item CISCO Networking Essentials \hfill (  CISCO  )
+            \item UiPath Automation Explorer for Students \hfill (RPA)
+            \item Cloud Computing  \hfill (NPTEL, Ministry of Education)
+            \item Machine Learning with Python  \hfill (Coursera)
         \end{highlights}
     }{
         \begin{highlights}
-            \item Python for Data Science and Machine Learning \hfill (  Udemy  )
-            \item DeepLearning.AI TensorFlow Developer \hfill (  Coursera  )
-            \item Machine Learning with Python \hfill (  Coursera  )
-        \end{highlights}
-    }
-    \end{twocolentry}
-
-    \section{Skills}\label{sec:skills}
-
-    \begin{twocolentry}{
-        \begin{highlights}
-            \item \textbf{Databases:} MySQL, PostgreSQL
-            \item \textbf{Cloud:} Google Cloud, Firebase, AWS [EC2]
-            \item \textbf{Tools:} GitHub, GitHub Actions, RESTful APIs, JWT
-        \end{highlights}
-    }{
-        \begin{highlights}
-            \item \textbf{Languages:} Python, JavaScript, Shell Scripts
-            \item \textbf{Web:} HTML, CSS, React, Vite, Tailwind CSS
-            \item \textbf{Frameworks:} Flask, Spring Security, Apache POI
+            \item Python Data Science and Machine Learning  \hfill (Udemy)
+            \item DeepLearning.AI TensorFlow Developer  \hfill (Coursera)
+            \item CISCO Networking Essentials  \hfill (CISCO)
         \end{highlights}
     }
     \end{twocolentry}
@@ -274,7 +276,7 @@
     \section{Achievements}\label{sec:achievements}
 
     \begin{highlights}
-        \item Managing 45 + GitHub repositories, earning 106+ stars and 60,000+ views, with 1,500+ releases and downloads.
+        \item Managing 45+ GitHub repositories, earning 106+ stars and 60,000+ views, with 1,500+ releases and downloads.
         \item Maintaining an open-source framework patcher with 50,000+ views and 67 stars, enabling deep system modifications.
     \end{highlights}
 

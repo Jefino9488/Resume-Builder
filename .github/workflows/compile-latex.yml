@@ -53,6 +53,6 @@ jobs:
           mkdir -p ~/.config/rclone
           echo "${{ secrets.RCLONE_CONFIG }}" | base64 -d > ~/.config/rclone/rclone.conf
 
-      - name: Upload resume.pdf to OneDrive Public folder
+      - name: Upload to OneDrive Public folder
         run: |
-          rclone copy resume.pdf onedrive:Public/resume.pdf --progress
+          rclone copy resume.pdf onedrive:Public/ --progress

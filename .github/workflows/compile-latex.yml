@@ -46,12 +46,13 @@ jobs:
       - name: Install rclone
         run: |
           curl https://rclone.org/install.sh | sudo bash
+          rclone version
 
-      - name: Configure rclone
+      - name: Set up rclone configuration
         run: |
           mkdir -p ~/.config/rclone
-          echo -e "${{ secrets.RCLONE_CONFIG }}" > ~/.config/rclone/rclone.conf
+          echo "${{ secrets.RCLONE_CONFIG }}" | base64 -d > ~/.config/rclone/rclone.conf
 
-      - name: Upload resume.pdf to OneDrive
+      - name: Upload resume.pdf to OneDrive Public folder
         run: |
-          rclone copy resume.pdf onedrive:Public/ --progress
+          rclone copy resume.pdf onedrive:Public/resume.pdf --progress

@@ -2,7 +2,7 @@ name: Build and Release Resume
 
 on:
   push:
-    branches: [ main ]
+    branches: [ master ]
   workflow_dispatch:
 
 jobs:
@@ -76,9 +76,9 @@ jobs:
 
       - name: Upload to OneDrive Public folder
         run: |
-          rclone copy resume.pdf onedrive:Public/ --progress
-          rclone copy resume-ai.pdf onedrive:Public/ --progress
-          rclone copy resume-backend.pdf onedrive:Public/ --progress
-          rclone copy resume-java.pdf onedrive:Public/ --progress
-          rclone copy resume-python.pdf onedrive:Public/ --progress
-          rclone copy resume-fullstack.pdf onedrive:Public/ --progress
+          rclone copy resume.pdf onedrive:Public/resume/ --progress
+          rclone copy resume-ai.pdf onedrive:Public/resume/ --progress
+          rclone copy resume-backend.pdf onedrive:Public/resume/ --progress
+          rclone copy resume-java.pdf onedrive:Public/resume/ --progress
+          rclone copy resume-python.pdf onedrive:Public/resume/ --progress
+          rclone copy resume-fullstack.pdf onedrive:Public/resume/ --progress

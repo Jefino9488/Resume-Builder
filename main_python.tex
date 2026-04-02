@@ -1,0 +1,290 @@
+\documentclass[10pt,a4paper]{article}
+
+% Packages:
+\usepackage[
+    ignoreheadfoot,
+    top=1cm,
+    bottom=1cm,
+    left=1cm,
+    right=1cm,
+    footskip=1.0cm,
+]{geometry}
+\usepackage{titlesec}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage[dvipsnames]{xcolor}
+\definecolor{primaryColor}{RGB}{0,0,0}
+\usepackage{enumitem}
+\usepackage{fontawesome5}
+\usepackage{amsmath}
+\usepackage[
+    pdftitle={Jefino's CV - Python},
+    pdfauthor={Jefino9488},
+    pdfcreator={LaTeX with RenderCV},
+    colorlinks=true,
+    urlcolor=primaryColor
+]{hyperref}
+\usepackage[pscoord]{eso-pic}
+\usepackage{calc}
+\usepackage{bookmark}
+\usepackage{lastpage}
+\usepackage{changepage}
+\usepackage{paracol}
+\usepackage{ifthen}
+\usepackage{needspace}
+\usepackage{iftex}
+
+% Ensure that generate pdf is machine readable/ATS parsable:
+\ifPDFTeX
+\pdfgentounicode=1
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\fi
+\usepackage{charter}
+
+% Some settings:
+\raggedright
+\pagestyle{empty}
+\setcounter{secnumdepth}{0}
+\setlength{\parindent}{0pt}
+\setlength{\topskip}{0pt}
+\setlength{\columnsep}{0.15cm}
+\pagenumbering{gobble}
+
+\titleformat{\section}{\needspace{3\baselineskip}\bfseries\large}{}{0pt}{}[\vspace{1pt}\titlerule]
+
+\titlespacing{\section}{
+    -1pt
+}{
+    0.2cm
+}{
+    0.2cm
+}
+
+\newenvironment{highlights}{
+    \begin{itemize}[
+        topsep=0.10cm,
+        parsep=0.10cm,
+        partopsep=0pt,
+        itemsep=0pt,
+        leftmargin=10pt,
+    ]
+    }{
+    \end{itemize}
+}
+
+\newenvironment{highlightsforbulletentries}{
+    \begin{itemize}[
+        topsep=0.5cm,
+        parsep=0.5cm,
+        partopsep=0pt,
+        itemsep=0pt,
+        leftmargin=8pt
+    ]
+    }{
+    \end{itemize}
+}
+
+\newenvironment{onecolentry}{
+    \begin{adjustwidth}{
+        0cm+0.00001cm
+    }{
+        0cm+0.00001cm
+    }
+    }{
+    \end{adjustwidth}
+}
+
+\newenvironment{twocolentry}[2][]{
+    \onecolentry
+    \newcommand\secondColumn{#2}
+    \setcolumnwidth{\fill,\fill}
+    \begin{paracol}{2}
+    }{
+        \switchcolumn\raggedleft\secondColumn
+    \end{paracol}
+    \endonecolentry
+}
+
+\newenvironment{threecolentry}[3][]{
+    \onecolentry
+    \newcommand\thirdColumn{#3}
+    \setcolumnwidth{,\fill,4.5cm}
+    \begin{paracol}{3}
+    {\raggedright#2}\switchcolumn
+    }{
+    \switchcolumn\raggedleft\thirdColumn
+    \end{paracol}
+    \endonecolentry
+}
+
+\newenvironment{fourcolentry}{
+    \onecolentry
+    \setcolumnwidth{\fill,\fill,\fill,\fill}
+    \begin{paracol}{4}
+    }{
+    \end{paracol}
+    \endonecolentry
+}
+
+\newenvironment{header}{
+    \setlength{\topsep}{0pt}\par\kern\topsep\centering\linespread{1.5}
+    }{
+    \par\kern\topsep
+}
+
+\hypersetup{
+    colorlinks=false,
+    pdfborder={0 0 0}
+}
+
+\newcommand{\placelastupdatedtext}{%
+    \AddToShipoutPictureFG*{%
+        \put(
+        \LenToUnit{\paperwidth-1.5cm}, %
+        \LenToUnit{1cm}
+        ){\vtop{{\null}\makebox[0pt][r]{%
+            \small\color{gray}\textit{\href{https://github.com/Jefino9488/Resume/releases}{Last updated in April 2026}}%
+        }}}%
+    }%
+}
+
+%///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+\begin{document}
+    \begin{header}
+        \fontsize{25pt}{25pt}\selectfont Jefino M Jacob
+
+        \vspace{3pt}
+
+        \normalsize
+        \mbox{\href{https://github.com/Jefino9488}{\faIcon{github} github.com/Jefino9488}}%
+        \kern3.0pt%
+        |%
+        \kern3.0pt%
+        \mbox{\href{https://jefino.is-a.dev/}{\faIcon{globe} jefino.is-a.dev}}%
+        \kern3.0pt%
+        |%
+        \kern3.0pt%
+        \mbox{\href{https://www.linkedin.com/in/jefino9488}{\faIcon{linkedin} in/jefino9488}}%
+        \kern3.0pt%
+        |%
+        \kern3.0pt%
+        \mbox{\href{mailto:jefinojacob9488@gmail.com}{\faIcon{envelope} jefinojacob9488@gmail.com}}%
+    \end{header}
+
+    \vspace{0.2cm}
+
+    \section{Education}\label{sec:education}
+
+    \begin{onecolentry}
+        \textbf{Chennai Institute of Technology, Chennai, Tamil Nadu} \hfill \textbf{CGPA: 8} \\
+        Bachelor of Technology in Artificial Intelligence and Data Science \hfill \textbf{2022 -- 2026}
+    \end{onecolentry}
+
+    \section{Skills}\label{sec:skills}
+
+    \begin{twocolentry}{
+        \begin{highlights}
+            \item \textbf{Languages:} Python, SQL, Java
+            \item \textbf{Frameworks:} Flask, FastAPI
+            \item \textbf{AI/ML:} Gemini API, Sentence-Transformers, RAG
+            \item \textbf{Testing:} PyTest, Selenium, Postman
+        \end{highlights}
+    }{
+        \begin{highlights}
+            \item \textbf{Databases:} MongoDB, PostgreSQL, MySQL
+            \item \textbf{Backend:} REST APIs, JWT
+            \item \textbf{DevOps \& Tools:} Docker, Git, GitHub Actions
+            \item \textbf{Platforms:} Linux, Web, Cloud
+        \end{highlights}
+    }
+    \end{twocolentry}
+
+    \section{Experience}\label{sec:experience}
+
+    \textbf{Web Development Intern} | Cognifyz \hfill \textbf{May 2024 – July 2024}
+    \begin{onecolentry}
+        \begin{highlights}
+            \vspace{0.01cm}
+            \item Collaborated with a team of developers to build and integrate multiple RESTful API endpoints for enterprise applications.
+            \item Worked on backend logic and API functionality, ensuring seamless data flow and system interoperability.
+            \item Used Swagger UI for testing and debugging APIs, which improved development speed and endpoint reliability.
+        \end{highlights}
+    \end{onecolentry}
+    \vspace{0.1cm}
+    \textbf{Python Developer Intern} | CodersCave \hfill \textbf{Nov 2023 – Dec 2023}
+    \begin{onecolentry}
+        \begin{highlights}
+            \vspace{0.01cm}
+            \item Contributed an open-source video mapping project that split YouTube videos into short segments and generate transcripts.
+            \item Implemented a transcription pipeline enhanced with a RAG model and built an embedded QA system for user queries.
+            \item Learned and applied Git/GitHub workflows, gaining practical experience in collaborative open-source development.
+        \end{highlights}
+    \end{onecolentry}
+
+    \section{Projects}\label{sec:projects}
+    \begin{onecolentry}
+        \textbf{\href{https://github.com/Jefino9488/TruthGuard-Backend}{TruthGuard Backend}} AI News Analysis Platform | Flask, Gemini, Sentence-Transformers, MongoDB \hfill \textbf{( 2025 )} \\
+        \begin{highlights}
+            \item Built a pipeline to scrape news, analyze bias/misinformation/sentiment with Gemini, and persist results in MongoDB.
+            \item Implemented semantic vector search with Sentence-Transformers embeddings using MongoDB Atlas Vector Search.
+            \item Added scheduled scraping and analysis with APScheduler and exposed REST endpoints for analytics and search.
+        \end{highlights}
+    \end{onecolentry}
+    \vspace{0.1cm}
+    \begin{onecolentry}
+        \textbf{\href{https://github.com/Jefino9488/AiWebTester}{AiWebTester}} AI-Powered Web Testing Framework | Python, Selenium, Gemini, PyTest \hfill \textbf{( June 2025 )} \\
+        \begin{highlights}
+            \item Created a natural-language testing framework that locates web elements via Gemini instead of brittle selectors.
+            \item Built reusable pytest architecture with AI actions (click, type, drag-drop) and screenshots on failure.
+            \item Enabled multi-browser runs with configurable environments via config.json and browsers.json.
+        \end{highlights}
+    \end{onecolentry}
+    \vspace{0.1cm}
+    \begin{onecolentry}
+        \textbf{\href{https://github.com/Jefino9488/MediMap}{MediMap}} Geo-Aware Hospital Finder | Flask, OSM, Overpass, Geopy \hfill \textbf{( 2025 )} \\
+        \begin{highlights}
+            \item Built a location-based search service to find hospitals and clinics using OpenStreetMap Overpass API.
+            \item Implemented geocoding, reverse geocoding, and distance calculations with caching and rate limiting.
+            \item Delivered a simple web UI and REST endpoint for area-based discovery.
+        \end{highlights}
+    \end{onecolentry}
+
+    \section{Certifications}\label{sec:certifications}
+
+    \begin{twocolentry}{
+        \begin{highlights}
+            \item Python Data Science \& ML \hfill (Udemy)
+            \item Networking Essentials \hfill (Cisco)
+            \item RPA Automation Explorer \hfill (UiPath)
+        \end{highlights}
+    }{
+        \begin{highlights}
+            \item Cloud Computing \hfill (NPTEL)
+            \item DeepLearning.AI TensorFlow Developer \hfill (Coursera)
+            \item Machine Learning with Python \hfill (Coursera)
+        \end{highlights}
+    }
+    \end{twocolentry}
+
+    \section{Achievements}\label{sec:achievements}
+
+    \begin{highlights}
+        \item Maintain Framework Patcher, an open-source Android patching tool with 70+ stars, 50k+ views, and 6k+ active users.
+        \item Published 1,500+ releases across personal and collaborative projects on GitHub.
+    \end{highlights}
+
+    \section{Coding Profile}\label{sec:coding-profile}
+
+    \begin{onecolentry}
+        \begin{highlights}
+            \item \textbf{LeetCode [jefinojacob9488] \hspace{3mm} :} Solved 250+ problems (Rating: 1435, Top 30\% globally)
+            \item \textbf{Skillrack \hspace{1mm}[26CIT032] \hspace{13mm} :} Completed 239 coding problems, 45 assessments, and 28 learning tracks
+            \item \textbf{CodeChef [jefino9488] \hspace{11mm} :} Earned 2 stars (Peak Rating: 1308)
+        \end{highlights}
+    \end{onecolentry}
+
+    \placelastupdatedtext
+
+\end{document}

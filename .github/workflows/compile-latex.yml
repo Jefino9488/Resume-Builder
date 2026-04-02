@@ -2,7 +2,7 @@ name: Build and Release Resume
 
 on:
   push:
-    branches: [ master ]
+    branches: [ main ]
   workflow_dispatch:
 
 jobs:
@@ -24,21 +24,42 @@ jobs:
             texlive-fonts-extra \
             latexmk
 
-      - name: Compile main.tex
+      - name: Compile resume variants
         run: |
           latexmk -pdf -interaction=nonstopmode main.tex
           mv main.pdf resume.pdf
 
-      - name: Create GitHub Release with resume.pdf
+          latexmk -pdf -interaction=nonstopmode main_ai.tex
+          mv main_ai.pdf resume-ai.pdf
+
+          latexmk -pdf -interaction=nonstopmode main_backend.tex
+          mv main_backend.pdf resume-backend.pdf
+
+          latexmk -pdf -interaction=nonstopmode main_java.tex
+          mv main_java.pdf resume-java.pdf
+
+          latexmk -pdf -interaction=nonstopmode main_python.tex
+          mv main_python.pdf resume-python.pdf
+
+          latexmk -pdf -interaction=nonstopmode main_fullstack.tex
+          mv main_fullstack.pdf resume-fullstack.pdf
+
+      - name: Create GitHub Release with PDFs
         uses: ncipollo/release-action@v1
         with:
           tag: v1.0.${{ github.run_number }}
           name: Resume Release v1.0.${{ github.run_number }}
-          artifacts: resume.pdf
+          artifacts: |
+            resume.pdf
+            resume-ai.pdf
+            resume-backend.pdf
+            resume-java.pdf
+            resume-python.pdf
+            resume-fullstack.pdf
           draft: false
           prerelease: false
           allowUpdates: true
-          body: "Compiled resume from main.tex."
+          body: "Compiled resume variants from LaTeX sources."
           generateReleaseNotes: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -56,3 +77,8 @@ jobs:
       - name: Upload to OneDrive Public folder
         run: |
           rclone copy resume.pdf onedrive:Public/ --progress
+          rclone copy resume-ai.pdf onedrive:Public/ --progress
+          rclone copy resume-backend.pdf onedrive:Public/ --progress
+          rclone copy resume-java.pdf onedrive:Public/ --progress
+          rclone copy resume-python.pdf onedrive:Public/ --progress
+          rclone copy resume-fullstack.pdf onedrive:Public/ --progress

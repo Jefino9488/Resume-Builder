@@ -1,3 +1,5 @@
+/.idea/
+/out/
 /.idea/.gitignore
 /out/main.aux
 /out/main.log

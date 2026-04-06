@@ -44,6 +44,8 @@ jobs:
           latexmk -pdf -interaction=nonstopmode main_fullstack.tex
           mv main_fullstack.pdf resume-fullstack.pdf
 
+          latexmk -pdf -interaction=nonstopmode biodata.tex
+
       - name: Create GitHub Release with PDFs
         uses: ncipollo/release-action@v1
         with:
@@ -56,6 +58,7 @@ jobs:
             resume-java.pdf
             resume-python.pdf
             resume-fullstack.pdf
+            biodata.pdf
           draft: false
           prerelease: false
           allowUpdates: true
@@ -82,3 +85,4 @@ jobs:
           rclone copy resume-java.pdf onedrive:Public/resume/ --progress
           rclone copy resume-python.pdf onedrive:Public/resume/ --progress
           rclone copy resume-fullstack.pdf onedrive:Public/resume/ --progress
+          rclone copy biodata.pdf onedrive:Public/resume/ --progress

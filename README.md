@@ -33,6 +33,7 @@ pdflatex main_backend.tex
 pdflatex main_java.tex
 pdflatex main_python.tex
 pdflatex main_fullstack.tex
+pdflatex biodata.tex
 ```
 
 ## Download Latest Resume
@@ -46,6 +47,7 @@ Direct links (OneDrive public mirror):
 - https://my-drive.pages.dev/Public/resume/resume-java.pdf
 - https://my-drive.pages.dev/Public/resume/resume-python.pdf
 - https://my-drive.pages.dev/Public/resume/resume-fullstack.pdf
+- https://my-drive.pages.dev/Public/resume/biodata.pdf
 
 ## Contact
 For any inquiries, reach out via [LinkedIn](https://www.linkedin.com/in/jefino9488) or email me at jefinojacob9488@gmail.com.

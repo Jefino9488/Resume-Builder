@@ -29,6 +29,9 @@ jobs:
           latexmk -pdf -interaction=nonstopmode main.tex
           mv main.pdf resume.pdf
 
+          latexmk -pdf -interaction=nonstopmode main_data.tex
+          mv main_data.pdf resume-data.pdf
+
           latexmk -pdf -interaction=nonstopmode main_ai.tex
           mv main_ai.pdf resume-ai.pdf
 
@@ -53,6 +56,7 @@ jobs:
           name: Resume Release v1.0.${{ github.run_number }}
           artifacts: |
             resume.pdf
+            resume-data.pdf
             resume-ai.pdf
             resume-backend.pdf
             resume-java.pdf
@@ -80,6 +84,7 @@ jobs:
       - name: Upload to OneDrive Public folder
         run: |
           rclone copy resume.pdf onedrive:Public/resume/ --progress
+          rclone copy resume-data.pdf onedrive:Public/resume/ --progress
           rclone copy resume-ai.pdf onedrive:Public/resume/ --progress
           rclone copy resume-backend.pdf onedrive:Public/resume/ --progress
           rclone copy resume-java.pdf onedrive:Public/resume/ --progress

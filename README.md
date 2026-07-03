@@ -33,6 +33,7 @@ pdflatex main_backend.tex
 pdflatex main_java.tex
 pdflatex main_python.tex
 pdflatex main_fullstack.tex
+pdflatex main_data.tex
 pdflatex biodata.tex
 ```
 
@@ -47,6 +48,7 @@ Direct links (OneDrive public mirror):
 - https://my-drive.pages.dev/Public/resume/resume-java.pdf
 - https://my-drive.pages.dev/Public/resume/resume-python.pdf
 - https://my-drive.pages.dev/Public/resume/resume-fullstack.pdf
+- https://my-drive.pages.dev/Public/resume/resume-data.pdf
 - https://my-drive.pages.dev/Public/resume/biodata.pdf
 
 ## Contact
